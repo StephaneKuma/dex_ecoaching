@@ -1,0 +1,38 @@
+{
+    "language": "Anglais",
+    "@language": {
+        "description": "Langue actuelle"
+    },
+    "onBoardingTitle1": "Apprenez les meilleurs cours en ligne",
+    "@onBoardingTitle1": {
+        "description": "Titre de l'écran d'accueil 1"
+    },
+    "onBoardingTitle2": "Obtenez des contenus exclusifs",
+    "@onBoardingTitle2": {
+        "description": "Titre de l'écran d’accueil 2"
+    },
+    "onBoardingTitle3": "Apprendre à votre rythme",
+    "@onBoardingTitle3": {
+        "description": "Titre de l'écran d’accueil 3"
+    },
+    "onBoardingDescription1": "Apprenez de nouveaux concepts et améliorez votre connaissance.",
+    "@onBoardingDescription1": {
+        "description": "Description de l'écran d’accueil 1"
+    },
+    "onBoardingDescription2": "Obtenez des contenus exclusifs. Apprenez de nouveaux concepts et améliorez votre connaissance.",
+    "@onBoardingDescription2": {
+        "description": "Description de l'écran d’accueil 2"
+    },
+    "onBoardingDescription3": "Apprendre à votre rythme. Apprenez de nouveaux concepts et améliorez votre connaissance.",
+    "@onBoardingDescription3": {
+        "description": "Description de l'écran d'accueil 3"
+    },
+    "alreadyHaveAccount": "Vous avez déjà un compte? Connectez-vous",
+    "@alreadyHaveAccount": {
+        "description": "Texte du lien pour se connecter"
+    },
+    "startWithOneMonthFree": "Commencez avec un mois gratuit",
+    "@startWithOneMonthFree": {
+        "description": "Texte du lien pour commencer avec un mois gratuit"
+    }
+}

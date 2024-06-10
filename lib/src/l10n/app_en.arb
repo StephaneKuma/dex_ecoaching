@@ -2,5 +2,37 @@
     "language": "English",
     "@language": {
         "description": "The current language"
+    },
+    "onBoardingTitle1": "Start learning the best online courses",
+    "@onBoardingTitle1": {
+        "description": "The title of the first onboarding screen"
+    },
+    "onBoardingTitle2": "Get access to exclusive content",
+    "@onBoardingTitle2": {
+        "description": "The title of the second onboarding screen"
+    },
+    "onBoardingTitle3": "Learn at your own pace",
+    "@onBoardingTitle3": {
+        "description": "The title of the third onboarding screen"
+    },
+    "onBoardingDescription1": "Learn from the best online courses. Discover new skills and improve your knowledge.",
+    "@onBoardingDescription1": {
+        "description": "The description of the first onboarding screen"
+    },
+    "onBoardingDescription2": "Get access to exclusive content. Learn from the best online courses. Discover new skills and improve your knowledge.",
+    "@onBoardingDescription2": {
+        "description": "The description of the second onboarding screen"
+    },
+    "onBoardingDescription3": "Learn at your own pace. Learn from the best online courses. Discover new skills and improve your knowledge.",
+    "@onBoardingDescription3": {
+        "description": "The description of the third onboarding screen"
+    },
+    "alreadyHaveAccount": "Already have an account? Sign In",
+    "@alreadyHaveAccount": {
+        "description": "The text of the 'Already have an account' button"
+    },
+    "startWithOneMonthFree": "Start with one month free",
+    "@startWithOneMonthFree": {
+        "description": "The text of the 'Start with one month free' button"
     }
 }
