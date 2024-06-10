@@ -27,12 +27,72 @@
     "@onBoardingDescription3": {
         "description": "The description of the third onboarding screen"
     },
-    "alreadyHaveAccount": "Already have an account? Sign In",
-    "@alreadyHaveAccount": {
+    "alreadyHaveAccountSignIn": "Already have an account? Sign In",
+    "@alreadyHaveAccountSignIn": {
         "description": "The text of the 'Already have an account' button"
+    },
+    "alreadyHaveAccount": "Already have an account?",
+    "@alreadyHaveAccount": {
+        "description": "The text of the 'Already have an account?' button"
+    },
+    "doesntHaveAccount": "Don't have an account?",
+    "@doesntHaveAccount": {
+        "description": "The text of the 'Don't have an account?' button"
     },
     "startWithOneMonthFree": "Start with one month free",
     "@startWithOneMonthFree": {
         "description": "The text of the 'Start with one month free' button"
+    },
+    "letUsGetStarted": "Let's get started...!",
+    "@letUsGetStarted": {
+        "description": "The text of the 'Let us get started' button"
+    },
+    "logIn": "Log In...!",
+    "@logIn": {
+        "description": "The text of the 'Log In' button"
+    },
+    "createAnAccountToAccessCourses": "Create an account to access courses",
+    "@createAnAccountToAccessCourses": {
+        "description": "The text of the 'Create an account to access courses' button"
+    },
+    "logInYourAccount": "Log in to your account to continue your lessons",
+    "@logInYourAccount": {
+        "description": "The text of the 'Log in to your account to continue your lessons' button"
+    },
+    "email": "Email",
+    "@email": {
+        "description": "The text of the 'Email' input field"
+    },
+    "password": "Password",
+    "@password": {
+        "description": "The text of the 'Password' input field"
+    },
+    "confirmPassword": "Confirm Password",
+    "@confirmPassword": {
+        "description": "The text of the 'Confirm Password' input field"
+    },
+    "acceptTerms": "I accept the terms and conditions",
+    "@acceptTerms": {
+        "description": "The text of the 'I accept the terms and conditions' checkbox"
+    },
+    "signIn": "Sign In",
+    "@signIn": {
+        "description": "The text of the 'Sign In' button"
+    },
+    "register": "Register",
+    "@register": {
+        "description": "The text of the 'Register' button"
+    },
+    "forgotPassword": "Forgot Password?",
+    "@forgotPassword": {
+        "description": "The text of the 'Forgot Password?' button"
+    },
+    "rememberMe": "Remember Me",
+    "@rememberMe": {
+        "description": "The text of the 'Remember Me' checkbox"
+    },
+    "orContinueWith": "Or continue with",
+    "@orContinueWith": {
+        "description": "The text of the 'or' divider"
     }
 }

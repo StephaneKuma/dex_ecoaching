@@ -27,12 +27,72 @@
     "@onBoardingDescription3": {
         "description": "Description de l'écran d'accueil 3"
     },
-    "alreadyHaveAccount": "Vous avez déjà un compte? Connectez-vous",
+    "alreadyHaveAccountSignIn": "Vous avez déjà un compte? Identifiez-vous",
+    "@alreadyHaveAccountSignIn": {
+        "description": "Texte du lien pour se connecter"
+    },
+    "alreadyHaveAccount": "Vous avez déjà un compte?",
     "@alreadyHaveAccount": {
         "description": "Texte du lien pour se connecter"
+    },
+    "doesntHaveAccount": "Vous n'avez pas de compte?",
+    "@doesntHaveAccount": {
+        "description": "Texte du lien pour s'enregistrer"
     },
     "startWithOneMonthFree": "Commencez avec un mois gratuit",
     "@startWithOneMonthFree": {
         "description": "Texte du lien pour commencer avec un mois gratuit"
+    },
+    "letUsGetStarted": "Commençons...!",
+    "@letUsGetStarted": {
+        "description": "Texte du lien pour commencer"
+    },
+    "logIn": "Identifiez-vous...!",
+    "@logIn": {
+        "description": "Texte du lien pour se connecter"
+    },
+    "createAnAccountToAccessCourses": "Créez un compte pour accéder aux cours",
+    "@createAnAccountToAccessCourses": {
+        "description": "Texte du lien pour créer un compte"
+    },
+    "logInYourAccount": "Identifiez-vous à votre compte pour continuer vos cours",
+    "@logInYourAccount": {
+        "description": "Texte du lien pour se connecter à votre compte"
+    },
+    "email": "Email",
+    "@email": {
+        "description": "Texte du champ d'entrée de l'email"
+    },
+    "password": "Mot de passe",
+    "@password": {
+        "description": "Texte du champ d'entrée du mot de passe"
+    },
+    "confirmPassword": "Confirmez le mot de passe",
+    "@confirmPassword": {
+        "description": "Texte du champ d'entrée de la confirmation du mot de passe"
+    },
+    "acceptTerms": "Acceptez les termes et conditions",
+    "@acceptTerms": {
+        "description": "Texte du lien pour accepter les conditions"
+    },
+    "signIn": "S'identifier",
+    "@signIn": {
+        "description": "Texte du lien pour se connecter"
+    },
+    "register": "S'enregistrer",
+    "@register": {
+        "description": "Texte du lien pour s'enregistrer"
+    },
+    "forgotPassword": "Mot de passe oublié?",
+    "@forgotPassword": {
+        "description": "Texte du lien pour le mot de passe oublie"
+    },
+    "rememberMe": "Se souvenir de moi",
+    "@rememberMe": {
+        "description": "Texte du lien pour se souvenir de moi"
+    },
+    "orContinueWith": "Ou continuer avec",
+    "@orContinueWith": {
+        "description": "Texte de l'interface d'accès ou de l'interface d'enregistrement"
     }
 }

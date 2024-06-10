@@ -1,4 +1,6 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:e_coaching/src/core/router/index.dart';
+import 'package:e_coaching/src/core/widgets/button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -110,12 +112,12 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       ),
                       SizedBox(height: (kDefaultSizedBoxHeight * 2.5).h),
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 50.h),
+                        padding: EdgeInsets.symmetric(horizontal: 30.h),
                         child: Text(
                           descriptions[currentIndex],
                           textAlign: TextAlign.center,
                           style: GoogleFonts.sarabun(
-                            fontSize: 14.sp,
+                            // fontSize: 14.sp,
                             fontWeight: FontWeight.normal,
                             color: kTextColor,
                           ),
@@ -127,31 +129,22 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   Column(
                     children: <Widget>[
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () => context.router.push(const SignInRoute()),
                         child: Text(
-                          AppLocalizations.of(context)!.alreadyHaveAccount,
+                          AppLocalizations.of(context)!.alreadyHaveAccountSignIn,
                           style: GoogleFonts.sarabun(
-                            fontSize: 14.sp,
+                            // fontSize: 14.sp,
                             fontWeight: FontWeight.normal,
                             color: kTitleColor,
                           ),
                         ),
                       ),
-                      SizedBox(height: 10.h),
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: kPrimaryColor,
-                          minimumSize: Size.fromHeight(54.74.h),
-                        ),
-                        child: Text(
-                          AppLocalizations.of(context)!.startWithOneMonthFree,
-                          style: GoogleFonts.sarabun(
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.normal,
-                            color: const Color(0xFFF5F5F5),
-                          ),
-                        ),
+                      SizedBox(height: 15.h),
+                      Button(
+                        onPressed: () =>
+                            context.router.replace(const RegistrationRoute()),
+                        label:
+                            AppLocalizations.of(context)!.startWithOneMonthFree,
                       ),
                     ],
                   ),

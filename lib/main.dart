@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.amber,
           inputDecorationTheme: InputDecorationTheme(
             contentPadding:
-                const EdgeInsets.symmetric(vertical: 15, horizontal: 5),
+                EdgeInsets.symmetric(vertical: 15.h, horizontal: 5.w),
             filled: true,
             fillColor: Colors.grey.shade200,
             // fillColor: Colors.white,
@@ -65,19 +65,19 @@ class MyApp extends StatelessWidget {
             // isDense: true,
             border: OutlineInputBorder(
               borderSide: BorderSide.none,
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(12.r),
             ),
             focusedBorder: OutlineInputBorder(
-              borderSide: const BorderSide(width: 1, color: kPrimaryColor),
-              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide(width: 1.w, color: kPrimaryColor),
+              borderRadius: BorderRadius.circular(12.r),
             ),
             enabledBorder: const OutlineInputBorder(
               borderSide: BorderSide.none,
             ),
           ),
           checkboxTheme: CheckboxThemeData(
-            checkColor: WidgetStateProperty.all(Colors.white),
-            fillColor: WidgetStateProperty.all(kPrimaryColor),
+            checkColor: WidgetStateProperty.all(kPrimaryColor),
+            // fillColor: WidgetStateProperty.all(kPrimaryColor),
           ),
           radioTheme: RadioThemeData(
             fillColor: WidgetStateProperty.all(kPrimaryColor),
