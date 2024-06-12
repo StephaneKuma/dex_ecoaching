@@ -7,6 +7,7 @@ class CustomTextFormField extends StatefulWidget {
     required this.keyboardType,
     required this.prefixIcon,
     this.hasSuffix = false,
+    this.readOnly = false,
     required this.label,
     this.controller,
     this.validator,
@@ -15,6 +16,7 @@ class CustomTextFormField extends StatefulWidget {
   final TextInputType keyboardType;
   final Icon prefixIcon;
   final bool hasSuffix;
+  final bool readOnly;
   final String label;
   final TextEditingController? controller;
   final String? Function(String? value)? validator;
@@ -38,6 +40,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       cursorColor: Colors.grey.shade700,
       keyboardType: widget.keyboardType,
       obscureText: _isObscured,
+      readOnly: widget.readOnly,
       decoration: InputDecoration(
         hintText: widget.label,
         prefixIcon: widget.prefixIcon,

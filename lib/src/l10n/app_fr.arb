@@ -94,5 +94,45 @@
     "orContinueWith": "Ou continuer avec",
     "@orContinueWith": {
         "description": "Texte de l'interface d'accès ou de l'interface d'enregistrement"
+    },
+    "youHaveNotAcceptedTheTerms": "Vous n'avez pas accepté les termes et conditions d'utilisation",
+    "@youHaveNotAcceptedTheTerms": {
+        "description": "Texte du lien pour accepter les conditions"
+    },
+    "passwordDoesNotMatch": "Le mot de passe ne correspond pas",
+    "@passwordDoesNotMatch": {
+        "description": "Texte du lien pour le mot de passe oublie"
+    },
+    "enterAValidEmail": "Entrez un email valide",
+    "@enterAValidEmail": {
+        "description": "Texte du lien pour le mot de passe oublie"
+    },
+    "pleaseEnterAnEmailAddress": "Veuillez entrer une adresse email",
+    "@pleaseEnterAnEmailAddress": {
+        "description": "Texte du lien pour le mot de passe oublie"
+    },
+    "pleaseEnterAPassword": "Veuillez entrer un mot de passe",
+    "@pleaseEnterAPassword": {
+        "description": "Texte du lien pour le mot de passe oublie"
+    },
+    "passwordMustBeAtLeast": "Le mot de passe doit contenir au moins",
+    "@passwordMustBeAtLeast": {
+        "description": "Texte du lien pour le mot de passe oublie"
+    },
+    "charactersLong": " caractères",
+    "@charactersLong": {
+        "description": "Texte du lien pour le mot de passe oublie"
+    },
+    "passwordMustContainAtLeast": "Le mot de passe doit contenir au moins une majuscule,\nune minuscule, un chiffre et un caractère spécial",
+    "@passwordMustContainAtLeast": {
+        "description": "Texte du lien pour le mot de passe oublie"
+    },
+    "userIsNotLoggedIn": "L'utilisateur n'est pas connecté",
+    "@userIsNotLoggedIn": {
+        "description": "Texte du lien pour le mot de passe oublie"
+    },
+    "userIsNull": "L'utilisateur est nul",
+    "@userIsNull": {
+        "description": "Texte du lien pour le mot de passe oublie"
     }
 }

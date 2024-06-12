@@ -24,7 +24,7 @@ abstract class _$AppRouter extends RootStackRouter {
     RegistrationRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: RegistrationPage(),
+        child: const RegistrationPage(),
       );
     },
     SignInRoute.name: (routeData) {

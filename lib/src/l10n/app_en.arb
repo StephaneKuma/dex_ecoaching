@@ -94,5 +94,45 @@
     "orContinueWith": "Or continue with",
     "@orContinueWith": {
         "description": "The text of the 'or' divider"
+    },
+    "youHaveNotAcceptedTheTerms": "You have not accepted the terms and conditions",
+    "@youHaveNotAcceptedTheTerms": {
+        "description": "The text of the 'You have not accepted the terms and conditions' message"
+    },
+    "passwordDoesNotMatch": "Password does not match",
+    "@passwordDoesNotMatch": {
+        "description": "The text of the 'Password does not match' message"
+    },
+    "enterAValidEmail": "Enter a valid email",
+    "@enterAValidEmail": {
+        "description": "The text of the 'Enter a valid email' message"
+    },
+    "pleaseEnterAnEmailAddress": "Please enter an email address",
+    "@pleaseEnterAnEmailAddress": {
+        "description": "The text of the 'Please enter an email address' message"
+    },
+    "pleaseEnterAPassword": "Please enter a password",
+    "@pleaseEnterAPassword": {
+        "description": "The text of the 'Please enter a password' message"
+    },
+    "passwordMustBeAtLeast": "Password must be at least",
+    "@passwordMustBeAtLeast": {
+        "description": "The text of the 'Password must be at least' message"
+    },
+    "charactersLong": " characters long",
+    "@charactersLong": {
+        "description": "The text of the ' characters long' message"
+    },
+    "passwordMustContainAtLeast": "Password must contain at least one uppercase letter,\none lowercase letter, one digit, and one special character",
+    "@passwordMustContainAtLeast": {
+        "description": "The text of the 'Password must contain at least one uppercase letter,\none lowercase letter, one digit, and one special character' message"
+    },
+    "userIsNotLoggedIn": "User is not logged in",
+    "@userIsNotLoggedIn": {
+        "description": "The text of the 'User is not logged in' message"
+    },
+    "userIsNull": "User is null",
+    "@userIsNull": {
+        "description": "The text of the 'User is null' message"
     }
 }

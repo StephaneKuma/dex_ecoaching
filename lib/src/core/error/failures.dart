@@ -1,5 +1,20 @@
-abstract class Failure {}
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+abstract class Failure {
+  String message;
 
-class ServerFailure extends Failure {}
+  Failure({
+    this.message = 'An unexpected error occurred',
+  });
+}
 
-class CacheFailure extends Failure {}
+final class ServerFailure extends Failure {
+  ServerFailure({
+    required super.message,
+  });
+}
+
+final class CacheFailure extends Failure {
+  CacheFailure({
+    required super.message,
+  });
+}

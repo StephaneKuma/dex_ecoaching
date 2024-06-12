@@ -9,10 +9,12 @@ class Button extends StatelessWidget {
     super.key,
     this.onPressed,
     required this.label,
+    this.submiting = false,
   });
 
   final void Function()? onPressed;
   final String label;
+  final bool submiting;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,11 @@ class Button extends StatelessWidget {
           borderRadius: BorderRadius.circular(12.r),
         ),
       ),
-      child: Text(label),
+      child: submiting
+          ? const CircularProgressIndicator(
+              color: kSecondaryColor,
+            )
+          : Text(label),
     );
   }
 }
