@@ -24,5 +24,10 @@ class AppRouter extends _$AppRouter {
           transitionsBuilder: TransitionsBuilders.fadeIn,
           durationInMilliseconds: 500,
         ),
+        CustomRoute(
+          page: SetupAccountRoute.page,
+          transitionsBuilder: TransitionsBuilders.fadeIn,
+          durationInMilliseconds: 500,
+        ),
       ];
 }

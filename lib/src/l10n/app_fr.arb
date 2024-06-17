@@ -134,5 +134,53 @@
     "userIsNull": "L'utilisateur est nul",
     "@userIsNull": {
         "description": "Texte du lien pour le mot de passe oublie"
+    },
+    "completeYourProfile": "Completer votre profil",
+    "@completeYourProfile": {
+        "description": "Texte du lien pour le mot de passe oublie"
+    },
+    "fullName": "Nom & Prénom(s)",
+    "@fullName": {
+        "description": "Texte du lien pour le mot de passe oublie"
+    },
+    "pseudo": "Pseudo",
+    "@pseudo": {
+        "description": "Texte du lien pour le mot de passe oublie"
+    },
+    "dateOfBirth": "Date de naissance",
+    "@dateOfBirth": {
+        "description": "Texte du lien pour le mot de passe oublie"
+    },
+    "phone": "Télephone",
+    "@phone": {
+        "description": "Texte du lien pour le mot de passe oublie"
+    },
+    "invalidPhoneNumber": "N° de téléphone invalide",
+    "@invalidPhoneNumber": {
+        "description": "Texte du lien pour le mot de passe oublie"
+    },
+    "gender": "Genre",
+    "@gender": {
+        "description": "Texte du lien pour le mot de passe oublie"
+    },
+    "changeProfilePicture": "Changer la photo de profil",
+    "@changeProfilePicture": {
+        "description": "Texte du lien pour le mot de passe oublie"
+    },
+    "uploadProfilePicture": "Upload Profile Picture",
+    "@uploadProfilePicture": {
+        "description": "Texte du lien pour le mot de passe oublie"
+    },
+    "continuea": "Continuer",
+    "@continuea": {
+        "description": "Texte du lien pour le mot de passe oublie"
+    },
+    "male": "Homme",
+    "@male": {
+        "description": "The text of the 'Male' radio button"
+    },
+    "female": "Femme",
+    "@female": {
+        "description": "The text of the 'Female' radio button"
     }
 }

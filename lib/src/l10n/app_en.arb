@@ -134,5 +134,53 @@
     "userIsNull": "User is null",
     "@userIsNull": {
         "description": "The text of the 'User is null' message"
+    },
+    "completeYourProfile": "Complete your profile",
+    "@completeYourProfile": {
+        "description": "The text of the 'Complete your profile' message"
+    },
+    "fullName": "Full Name",
+    "@fullName": {
+        "description": "The text of the 'Full Name' input field"
+    },
+    "pseudo": "Pseudo",
+    "@pseudo": {
+        "description": "The text of the 'Pseudo' input field"
+    },
+    "dateOfBirth": "Date of Birth",
+    "@dateOfBirth": {
+        "description": "The text of the 'Date of Birth' input field"
+    },
+    "phone": "Phone Number",
+    "@phone": {
+        "description": "The text of the 'Phone' input field"
+    },
+    "invalidPhoneNumber": "Invalid phone number",
+    "@invalidPhoneNumber": {
+        "description": "The text of the 'Invalid phone number' message"
+    },
+    "gender": "Gender",
+    "@gender": {
+        "description": "The text of the 'Gender' input field"
+    },
+    "changeProfilePicture": "Change Profile Picture",
+    "@changeProfilePicture": {
+        "description": "The text of the 'Change Profile Picture' button"
+    },
+    "uploadProfilePicture": "Upload Profile Picture",
+    "@uploadProfilePicture": {
+        "description": "The text of the 'Upload Profile Picture' button"
+    },
+    "continuea": "Continue",
+    "@continuea": {
+        "description": "The text of the 'Continue' button"
+    },
+    "male": "Male",
+    "@male": {
+        "description": "The text of the 'Male' radio button"
+    },
+    "female": "Female",
+    "@female": {
+        "description": "The text of the 'Female' radio button"
     }
 }

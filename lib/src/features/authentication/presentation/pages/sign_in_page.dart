@@ -57,7 +57,7 @@ class _SignInPageState extends State<SignInPage> {
         child: BlocConsumer<AuthenticationBloc, AuthenticationState>(
           listener: (context, state) {
             if (state is AuthenticationSuccess) {
-              context.router.replace(const RegistrationRoute());
+              context.router.replace(const SetupAccountRoute());
             }
 
             if (state is AuthenticationFailure) {

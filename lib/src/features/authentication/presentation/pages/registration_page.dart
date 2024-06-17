@@ -60,6 +60,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
         padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: BlocConsumer<AuthenticationBloc, AuthenticationState>(
           listener: (context, state) {
+            if (state is AuthenticationSuccess) {
+              context.router.replace(const SetupAccountRoute());
+            }
+
             if (state is AuthenticationFailure) {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(

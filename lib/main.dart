@@ -68,7 +68,7 @@ class MyApp extends StatelessWidget {
             //   ),
             // );
             print("Logged in");
-            _router.push(const RegistrationRoute());
+            _router.push(const SetupAccountRoute());
           }
           return MaterialApp.router(
             debugShowCheckedModeBanner: false,
@@ -86,6 +86,7 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(seedColor: kPrimaryColor),
               scaffoldBackgroundColor: Colors.grey.shade100,
               appBarTheme: const AppBarTheme(
+                backgroundColor: Colors.transparent,
                 elevation: 0.0,
                 // centerTitle: true,
               ),
