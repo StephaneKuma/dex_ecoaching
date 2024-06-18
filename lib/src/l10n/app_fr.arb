@@ -234,5 +234,17 @@
     "allCategories": "Toutes les catégories",
     "@allCategories": {
         "description": "The text of the 'All Categories' button"
+    },
+    "chat": "Messages",
+    "@chat": {
+        "description": "The text of the 'All Categories' button"
+    },
+    "transaction": "Transactions",
+    "@transaction": {
+        "description": "The text of the 'All Categories' button"
+    },
+    "profile": "Profil",
+    "@profile": {
+        "description": "The text of the 'All Categories' button"
     }
 }

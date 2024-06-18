@@ -8,13 +8,20 @@ class CourseBox extends StatelessWidget {
   const CourseBox({
     super.key,
     this.inRow = false,
+    this.completed = false,
   });
 
   factory CourseBox.inRaw() => const CourseBox(
         inRow: true,
       );
 
+  factory CourseBox.completed() => const CourseBox(
+        inRow: true,
+        completed: true,
+      );
+
   final bool inRow;
+  final bool completed;
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +66,7 @@ class CourseBox extends StatelessWidget {
                       child: Container(
                         padding: EdgeInsets.all(10.w),
                         decoration: BoxDecoration(
-                          color: Colors.grey.shade50,
+                          color: Colors.grey.shade100,
                           borderRadius: BorderRadius.only(
                             topRight: Radius.circular(12.r),
                             bottomRight: Radius.circular(12.r),
@@ -69,19 +76,28 @@ class CourseBox extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            const Row(
+                            Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
-                                Text(
+                                const Text(
                                   "UI/UX Design",
                                   style: TextStyle(
                                     color: kPrimaryColor,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                Icon(
-                                  Icons.bookmark,
-                                  color: kTertiaryColor,
+                                Container(
+                                  height: 50.h,
+                                  width: 50.h,
+                                  decoration: const BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Colors.white,
+                                  ),
+                                  child: Icon(
+                                    Icons.check_circle,
+                                    color: kTertiaryColor,
+                                    size: 45.sp,
+                                  ),
                                 )
                               ],
                             ),
@@ -92,26 +108,27 @@ class CourseBox extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            RichText(
-                              text: TextSpan(
-                                text: "28 \$  ",
-                                style: TextStyle(
-                                  color: kTertiaryColor,
-                                  fontSize: 26.sp,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                                children: <TextSpan>[
-                                  TextSpan(
-                                    text: "42 \$",
-                                    style: TextStyle(
-                                      color: Colors.grey.shade500,
-                                      fontSize: 20.sp,
-                                      decoration: TextDecoration.lineThrough,
-                                    ),
+                            if (!completed)
+                              RichText(
+                                text: TextSpan(
+                                  text: "28 \$  ",
+                                  style: TextStyle(
+                                    color: kTertiaryColor,
+                                    fontSize: 26.sp,
+                                    fontWeight: FontWeight.bold,
                                   ),
-                                ],
+                                  children: <TextSpan>[
+                                    TextSpan(
+                                      text: "42 \$",
+                                      style: TextStyle(
+                                        color: Colors.grey.shade500,
+                                        fontSize: 20.sp,
+                                        decoration: TextDecoration.lineThrough,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
@@ -133,15 +150,50 @@ class CourseBox extends StatelessWidget {
                                   ],
                                 ),
                                 Text(
-                                  "28 mentors",
+                                  "|",
                                   style: TextStyle(
-                                    color: kPrimaryColor,
-                                    fontSize: 22.sp,
+                                    fontSize: 24.sp,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
+                                if (!completed)
+                                  Text(
+                                    "28 mentors",
+                                    style: TextStyle(
+                                      color: kPrimaryColor,
+                                      fontSize: 22.sp,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                if (completed)
+                                  const Text(
+                                    "2 h 36 mins",
+                                    style: TextStyle(
+                                      // fontSize: 24.sp,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
                               ],
-                            )
+                            ),
+                            if (completed)
+                              TextButton(
+                                onPressed: () {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                      content: Text('Cerificat'),
+                                    ),
+                                  );
+                                },
+                                child: Text(
+                                  'Afficher le certificat'.toUpperCase(),
+                                  style: const TextStyle(
+                                    color: kTertiaryColor,
+                                    fontWeight: FontWeight.bold,
+                                    decoration: TextDecoration.underline,
+                                    decorationColor: kTertiaryColor,
+                                  ),
+                                ),
+                              ),
                           ],
                         ),
                       ),

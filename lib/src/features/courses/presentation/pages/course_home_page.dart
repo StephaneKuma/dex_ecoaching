@@ -1,5 +1,8 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:e_coaching/src/core/constants/colors.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:e_coaching/src/core/router/index.dart';
 import 'package:e_coaching/src/features/courses/presentation/widgets/category_list.dart';
 import 'package:e_coaching/src/features/courses/presentation/widgets/course_box.dart';
@@ -7,14 +10,6 @@ import 'package:e_coaching/src/features/courses/presentation/widgets/header_box.
 import 'package:e_coaching/src/features/courses/presentation/widgets/offer_box.dart';
 import 'package:e_coaching/src/features/courses/presentation/widgets/search_box.dart';
 import 'package:e_coaching/src/features/courses/presentation/widgets/welcome_box.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'package:e_coaching/src/core/commons/cubits/app_user/app_user_cubit.dart';
-import 'package:e_coaching/src/core/widgets/loader.dart';
-import 'package:line_icons/line_icon.dart';
 
 @RoutePage()
 class CourseHomePage extends StatelessWidget {
@@ -30,7 +25,7 @@ class CourseHomePage extends StatelessWidget {
           children: <Widget>[
             SizedBox(height: (mediaQuery.padding.top + 20).h),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.w),
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Column(
                 children: <Widget>[
                   const WelcomeBox(),
@@ -63,7 +58,7 @@ class CourseHomePage extends StatelessWidget {
                       physics: const BouncingScrollPhysics(),
                       itemBuilder: (context, index) => const CourseBox(),
                       separatorBuilder: (context, index) =>
-                          SizedBox(width: 16.w),
+                          SizedBox(width: 20.w),
                       itemCount: 5,
                     ),
                   ),

@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:e_coaching/src/core/constants/dimensions.dart';
 import 'package:e_coaching/src/features/courses/presentation/widgets/search_box.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

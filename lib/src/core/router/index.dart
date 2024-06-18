@@ -1,7 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:e_coaching/src/features/authentication/presentation/pages/index.dart';
+import 'package:e_coaching/src/features/chat/presentation/pages/index.dart';
 import 'package:e_coaching/src/features/courses/presentation/pages/index.dart';
 import 'package:e_coaching/src/features/onboarding/presentation/pages/index.dart';
+import 'package:e_coaching/src/features/profile/presentation/pages/index.dart';
+import 'package:e_coaching/src/features/transaction/presentation/pages/index.dart';
 import 'package:flutter/material.dart';
 
 part 'index.gr.dart';
@@ -12,7 +15,7 @@ class AppRouter extends _$AppRouter {
   List<AutoRoute> get routes => <AutoRoute>[
         CustomRoute(
           page: OnboardingRoute.page,
-          // initial: true,
+          initial: true,
           transitionsBuilder: TransitionsBuilders.fadeIn,
           durationInMilliseconds: 500,
         ),
@@ -33,7 +36,6 @@ class AppRouter extends _$AppRouter {
         ),
         CustomRoute(
           page: CoursesMainRoute.page,
-          initial: true,
           transitionsBuilder: TransitionsBuilders.fadeIn,
           durationInMilliseconds: 500,
           children: <AutoRoute>[
@@ -44,6 +46,21 @@ class AppRouter extends _$AppRouter {
             ),
             CustomRoute(
               page: UserCoursesRoute.page,
+              transitionsBuilder: TransitionsBuilders.fadeIn,
+              durationInMilliseconds: 500,
+            ),
+            CustomRoute(
+              page: ChatRoute.page,
+              transitionsBuilder: TransitionsBuilders.fadeIn,
+              durationInMilliseconds: 500,
+            ),
+            CustomRoute(
+              page: TransactionRoute.page,
+              transitionsBuilder: TransitionsBuilders.fadeIn,
+              durationInMilliseconds: 500,
+            ),
+            CustomRoute(
+              page: ProfilRoute.page,
               transitionsBuilder: TransitionsBuilders.fadeIn,
               durationInMilliseconds: 500,
             ),

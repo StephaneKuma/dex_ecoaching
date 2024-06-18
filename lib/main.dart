@@ -61,11 +61,6 @@ class MyApp extends StatelessWidget {
         },
         builder: (context, state) {
           if (state) {
-            // return const Scaffold(
-            //   body: Center(
-            //     child: Text('Logged In'),
-            //   ),
-            // );
             _router.push(const SetupAccountRoute());
           }
           return MaterialApp.router(
@@ -86,6 +81,7 @@ class MyApp extends StatelessWidget {
               appBarTheme: const AppBarTheme(
                 backgroundColor: Colors.transparent,
                 elevation: 0.0,
+                scrolledUnderElevation: 0.0,
                 // centerTitle: true,
               ),
               textTheme: GoogleFonts.jostTextTheme(

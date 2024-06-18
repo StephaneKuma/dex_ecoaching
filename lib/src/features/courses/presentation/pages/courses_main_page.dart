@@ -1,7 +1,9 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:e_coaching/src/core/router/index.dart';
 import 'package:flutter/material.dart';
-import 'package:line_icons/line_icon.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'package:e_coaching/src/core/router/index.dart';
 
 @RoutePage()
 class CoursesMainPage extends StatelessWidget {
@@ -9,32 +11,49 @@ class CoursesMainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AutoTabsRouter(
-      routes: const <PageRouteInfo<dynamic>>[
-        CourseHomeRoute(),
-        UserCoursesRoute(),
-      ],
-      builder: (context, child) {
-        final TabsRouter router = AutoTabsRouter.of(context);
+    return SafeArea(
+      child: AutoTabsRouter(
+        routes: const <PageRouteInfo<dynamic>>[
+          CourseHomeRoute(),
+          UserCoursesRoute(),
+          ChatRoute(),
+          TransactionRoute(),
+          ProfilRoute(),
+        ],
+        builder: (context, child) {
+          final TabsRouter router = AutoTabsRouter.of(context);
 
-        return Scaffold(
-          body: child,
-          bottomNavigationBar: NavigationBar(
-            selectedIndex: router.activeIndex,
-            onDestinationSelected: router.setActiveIndex,
-            destinations: const <NavigationDestination>[
-              NavigationDestination(
-                icon: LineIcon.home(),
-                label: 'Home',
-              ),
-              NavigationDestination(
-                icon: LineIcon.list(),
-                label: 'My Courses',
-              ),
-            ],
-          ),
-        );
-      },
+          return Scaffold(
+            body: child,
+            bottomNavigationBar: NavigationBar(
+              selectedIndex: router.activeIndex,
+              onDestinationSelected: router.setActiveIndex,
+              destinations: <NavigationDestination>[
+                NavigationDestination(
+                  icon: const FaIcon(FontAwesomeIcons.house),
+                  label: AppLocalizations.of(context)!.home,
+                ),
+                NavigationDestination(
+                  icon: const FaIcon(FontAwesomeIcons.listCheck),
+                  label: AppLocalizations.of(context)!.myCourses,
+                ),
+                NavigationDestination(
+                  icon: const FaIcon(FontAwesomeIcons.message),
+                  label: AppLocalizations.of(context)!.chat,
+                ),
+                NavigationDestination(
+                  icon: const FaIcon(FontAwesomeIcons.wallet),
+                  label: AppLocalizations.of(context)!.transaction,
+                ),
+                NavigationDestination(
+                  icon: const FaIcon(FontAwesomeIcons.user),
+                  label: AppLocalizations.of(context)!.profile,
+                ),
+              ],
+            ),
+          );
+        },
+      ),
     );
   }
 }

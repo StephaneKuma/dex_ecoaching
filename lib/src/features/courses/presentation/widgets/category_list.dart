@@ -43,7 +43,7 @@ class _CategoryListState extends State<CategoryList> {
         scrollDirection: Axis.horizontal,
         physics: const BouncingScrollPhysics(),
         itemCount: categories.length,
-        separatorBuilder: (context, index) => SizedBox(width: 16.w),
+        separatorBuilder: (context, index) => SizedBox(width: 20.w),
         itemBuilder: (context, index) => GestureDetector(
           onTap: () {
             setState(() {
