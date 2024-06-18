@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:e_coaching/src/features/authentication/presentation/pages/index.dart';
 import 'package:e_coaching/src/features/courses/presentation/pages/index.dart';
 import 'package:e_coaching/src/features/onboarding/presentation/pages/index.dart';
+import 'package:flutter/material.dart';
 
 part 'index.gr.dart';
 
@@ -50,6 +51,11 @@ class AppRouter extends _$AppRouter {
         ),
         CustomRoute(
           page: CourseCategoriesRoute.page,
+          transitionsBuilder: TransitionsBuilders.fadeIn,
+          durationInMilliseconds: 500,
+        ),
+        CustomRoute(
+          page: CourseListRoute.page,
           transitionsBuilder: TransitionsBuilders.fadeIn,
           durationInMilliseconds: 500,
         ),

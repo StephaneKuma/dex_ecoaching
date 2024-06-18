@@ -1,9 +1,20 @@
-import 'package:e_coaching/src/core/constants/colors.dart';
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'package:e_coaching/src/core/constants/colors.dart';
+
 class CategoryList extends StatefulWidget {
-  const CategoryList({super.key});
+  const CategoryList({
+    super.key,
+    this.color = kTertiaryColor,
+  });
+
+  factory CategoryList.primary() => const CategoryList(
+        color: kPrimaryColor,
+      );
+
+  final Color color;
 
   @override
   State<CategoryList> createState() => _CategoryListState();
@@ -43,8 +54,8 @@ class _CategoryListState extends State<CategoryList> {
             padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 5.h),
             decoration: BoxDecoration(
               color: current == index
-                  ? kTertiaryColor
-                  : kTertiaryColor.withOpacity(.1),
+                  ? widget.color
+                  : widget.color.withOpacity(.1),
               borderRadius: BorderRadius.circular(12.r),
             ),
             child: Center(

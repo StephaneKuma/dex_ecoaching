@@ -71,11 +71,11 @@ class CourseHomePage extends StatelessWidget {
                   HeaderBox(
                     title: AppLocalizations.of(context)!.popularCourses,
                     onTap: () => context.router.push(
-                      const CourseCategoriesRoute(),
+                      CourseListRoute(
+                        title: AppLocalizations.of(context)!.popularCourses,
+                      ),
                     ),
                   ),
-                  SizedBox(height: (10).h),
-                  const CategoryList(),
                   SizedBox(height: (10).h),
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 5.h),

@@ -27,6 +27,17 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const CourseHomePage(),
       );
     },
+    CourseListRoute.name: (routeData) {
+      final args = routeData.argsAs<CourseListRouteArgs>(
+          orElse: () => const CourseListRouteArgs());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: CourseListPage(
+          key: args.key,
+          title: args.title,
+        ),
+      );
+    },
     CoursesMainRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -92,6 +103,44 @@ class CourseHomeRoute extends PageRouteInfo<void> {
   static const String name = 'CourseHomeRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [CourseListPage]
+class CourseListRoute extends PageRouteInfo<CourseListRouteArgs> {
+  CourseListRoute({
+    Key? key,
+    String title = "Liste des cours",
+    List<PageRouteInfo>? children,
+  }) : super(
+          CourseListRoute.name,
+          args: CourseListRouteArgs(
+            key: key,
+            title: title,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'CourseListRoute';
+
+  static const PageInfo<CourseListRouteArgs> page =
+      PageInfo<CourseListRouteArgs>(name);
+}
+
+class CourseListRouteArgs {
+  const CourseListRouteArgs({
+    this.key,
+    this.title = "Liste des cours",
+  });
+
+  final Key? key;
+
+  final String title;
+
+  @override
+  String toString() {
+    return 'CourseListRouteArgs{key: $key, title: $title}';
+  }
 }
 
 /// generated route for
