@@ -1,0 +1,81 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:e_coaching/src/core/constants/colors.dart';
+import 'package:e_coaching/src/features/courses/presentation/widgets/category_list.dart';
+import 'package:e_coaching/src/features/courses/presentation/widgets/course_box.dart';
+import 'package:e_coaching/src/features/courses/presentation/widgets/header_box.dart';
+import 'package:e_coaching/src/features/courses/presentation/widgets/offer_box.dart';
+import 'package:e_coaching/src/features/courses/presentation/widgets/search_box.dart';
+import 'package:e_coaching/src/features/courses/presentation/widgets/welcome_box.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'package:e_coaching/src/core/commons/cubits/app_user/app_user_cubit.dart';
+import 'package:e_coaching/src/core/widgets/loader.dart';
+import 'package:line_icons/line_icon.dart';
+
+@RoutePage()
+class CourseHomePage extends StatelessWidget {
+  const CourseHomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final MediaQueryData mediaQuery = MediaQuery.of(context);
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            SizedBox(height: (mediaQuery.padding.top + 20).h),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
+              child: Column(
+                children: <Widget>[
+                  const WelcomeBox(),
+                  SizedBox(height: (20).h),
+                  const SearchBox(),
+                ],
+              ),
+            ),
+            SizedBox(height: (20).h),
+            const OfferBox(),
+            SizedBox(height: (20).h),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
+              child: Column(
+                children: <Widget>[
+                  HeaderBox(
+                    title: AppLocalizations.of(context)!.popularCourses,
+                    onTap: () {},
+                  ),
+                  SizedBox(height: (10).h),
+                  const CategoryList(),
+                  SizedBox(height: (10).h),
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: 5.h),
+                    height: (MediaQuery.of(context).size.height * 0.35).h,
+                    child: ListView.separated(
+                      scrollDirection: Axis.horizontal,
+                      physics: const BouncingScrollPhysics(),
+                      itemBuilder: (context, index) => const CourseBox(),
+                      separatorBuilder: (context, index) =>
+                          SizedBox(width: 16.w),
+                      itemCount: 5,
+                    ),
+                  ),
+                  SizedBox(height: (20).h),
+                  HeaderBox(
+                    title: AppLocalizations.of(context)!.topMentors,
+                    onTap: () {},
+                  ),
+                  SizedBox(height: (20).h),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

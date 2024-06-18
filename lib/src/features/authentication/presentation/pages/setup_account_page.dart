@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:auto_route/auto_route.dart';
+import 'package:e_coaching/src/core/router/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -167,7 +168,8 @@ class _SetupAccountPageState extends State<SetupAccountPage> {
                   SizedBox(height: kDefaultSizedBoxHeight.h),
                   Button(
                     onPressed: () {
-                      if (formKey.currentState!.validate()) {}
+                      // if (formKey.currentState!.validate()) {}
+                      context.router.replace(const CoursesMainRoute());
                     },
                     label: AppLocalizations.of(context)!.continuea,
                   ),

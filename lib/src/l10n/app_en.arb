@@ -194,5 +194,37 @@
     "gallery": "Gallery",
     "@gallery": {
         "description": "The text of the 'Gallery' button"
+    },
+    "goodMorning": "Good morning",
+    "@goodMorning": {
+        "description": "The text of the 'Good Morning' message"
+    },
+    "whatToLearnToday": "What would you like to learn\ntoday? Search below.",
+    "@whatToLearnToday": {
+        "description": "The text of the 'What to learn today?' message"
+    },
+    "search": "Search...",
+    "@search": {
+        "description": "The text of the 'Search' button"
+    },
+    "viewAll": "View all",
+    "@viewAll": {
+        "description": "The text of the 'View all' button"
+    },
+    "popularCourses": "Popular Courses",
+    "@popularCourses": {
+        "description": "The text of the 'Popular Courses' message"
+    },
+    "topMentors": "Top Mentors",
+    "@topMentors": {
+        "description": "The text of the 'Top Mentors' message"
+    },
+    "home": "Home",
+    "@home": {
+        "description": "The text of the 'Home' button"
+    },
+    "myCourses": "My Courses",
+    "@myCourses": {
+        "description": "The text of the 'My Courses' button"
     }
 }

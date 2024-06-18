@@ -15,6 +15,18 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    CourseHomeRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const CourseHomePage(),
+      );
+    },
+    CoursesMainRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const CoursesMainPage(),
+      );
+    },
     OnboardingRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -39,7 +51,41 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const SignInPage(),
       );
     },
+    UserCoursesRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const UserCoursesPage(),
+      );
+    },
   };
+}
+
+/// generated route for
+/// [CourseHomePage]
+class CourseHomeRoute extends PageRouteInfo<void> {
+  const CourseHomeRoute({List<PageRouteInfo>? children})
+      : super(
+          CourseHomeRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'CourseHomeRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [CoursesMainPage]
+class CoursesMainRoute extends PageRouteInfo<void> {
+  const CoursesMainRoute({List<PageRouteInfo>? children})
+      : super(
+          CoursesMainRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'CoursesMainRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -94,6 +140,20 @@ class SignInRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'SignInRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [UserCoursesPage]
+class UserCoursesRoute extends PageRouteInfo<void> {
+  const UserCoursesRoute({List<PageRouteInfo>? children})
+      : super(
+          UserCoursesRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'UserCoursesRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
