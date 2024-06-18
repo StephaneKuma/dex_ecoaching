@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,7 +9,12 @@ import 'package:e_coaching/src/core/constants/colors.dart';
 class SearchBox extends StatelessWidget {
   const SearchBox({
     super.key,
+    this.hasFilter = false,
   });
+
+  factory SearchBox.withFilter() => const SearchBox(hasFilter: true);
+
+  final bool? hasFilter;
 
   @override
   Widget build(BuildContext context) {
@@ -32,13 +38,15 @@ class SearchBox extends StatelessWidget {
           Row(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              RotatedBox(
-                quarterTurns: 3,
-                child: LineIcon.search(
-                  size: 30.h,
+              if (hasFilter == true) ...[
+                RotatedBox(
+                  quarterTurns: 3,
+                  child: LineIcon.search(
+                    size: 30.h,
+                  ),
                 ),
-              ),
-              SizedBox(width: 10.w),
+                SizedBox(width: 10.w),
+              ],
               Text(AppLocalizations.of(context)!.search),
             ],
           ),
@@ -49,7 +57,14 @@ class SearchBox extends StatelessWidget {
               color: kPrimaryColor,
               borderRadius: BorderRadius.circular(12.r),
             ),
-            child: const LineIcon.tools(),
+            child: hasFilter == true
+                ? const LineIcon.tools()
+                : const RotatedBox(
+                    quarterTurns: 3,
+                    child: LineIcon.search(
+                        // size: 30.h,
+                        ),
+                  ),
           )
         ],
       ),

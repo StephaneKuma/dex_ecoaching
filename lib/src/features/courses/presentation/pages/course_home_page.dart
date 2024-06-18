@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:e_coaching/src/core/constants/colors.dart';
+import 'package:e_coaching/src/core/router/index.dart';
 import 'package:e_coaching/src/features/courses/presentation/widgets/category_list.dart';
 import 'package:e_coaching/src/features/courses/presentation/widgets/course_box.dart';
 import 'package:e_coaching/src/features/courses/presentation/widgets/header_box.dart';
@@ -34,7 +35,7 @@ class CourseHomePage extends StatelessWidget {
                 children: <Widget>[
                   const WelcomeBox(),
                   SizedBox(height: (20).h),
-                  const SearchBox(),
+                  SearchBox.withFilter(),
                 ],
               ),
             ),
@@ -46,8 +47,32 @@ class CourseHomePage extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   HeaderBox(
+                    title: AppLocalizations.of(context)!.categories,
+                    onTap: () => context.router.push(
+                      const CourseCategoriesRoute(),
+                    ),
+                  ),
+                  SizedBox(height: (10).h),
+                  const CategoryList(),
+                  SizedBox(height: (10).h),
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: 5.h),
+                    height: (MediaQuery.of(context).size.height * 0.35).h,
+                    child: ListView.separated(
+                      scrollDirection: Axis.horizontal,
+                      physics: const BouncingScrollPhysics(),
+                      itemBuilder: (context, index) => const CourseBox(),
+                      separatorBuilder: (context, index) =>
+                          SizedBox(width: 16.w),
+                      itemCount: 5,
+                    ),
+                  ),
+                  SizedBox(height: (20).h),
+                  HeaderBox(
                     title: AppLocalizations.of(context)!.popularCourses,
-                    onTap: () {},
+                    onTap: () => context.router.push(
+                      const CourseCategoriesRoute(),
+                    ),
                   ),
                   SizedBox(height: (10).h),
                   const CategoryList(),

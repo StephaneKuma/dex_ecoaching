@@ -226,5 +226,13 @@
     "myCourses": "Mes cours",
     "@myCourses": {
         "description": "The text of the 'My Courses' button"
+    },
+    "categories": "Catégories",
+    "@categories": {
+        "description": "The text of the 'Categories' button"
+    },
+    "allCategories": "Toutes les catégories",
+    "@allCategories": {
+        "description": "The text of the 'All Categories' button"
     }
 }

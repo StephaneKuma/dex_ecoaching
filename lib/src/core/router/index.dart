@@ -48,5 +48,10 @@ class AppRouter extends _$AppRouter {
             ),
           ],
         ),
+        CustomRoute(
+          page: CourseCategoriesRoute.page,
+          transitionsBuilder: TransitionsBuilders.fadeIn,
+          durationInMilliseconds: 500,
+        ),
       ];
 }
