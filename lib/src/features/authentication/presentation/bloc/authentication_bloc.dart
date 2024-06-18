@@ -32,6 +32,7 @@ class AuthenticationBloc
         _currentUser = currentUser,
         _userCubit = userCubit,
         super(AuthenticationInitial()) {
+          on<AuthenticationEvent>((_, emit) => emit(AuthenticationLoading()));
     on<AuthenticationSignedUp>(_onAuthSignedUp);
     on<AuthenticationSignedIn>(_onAuthSignedIn);
     on<AuthenticationUserIsLoggedIn>(_onAuthIsLoggedIn);
@@ -41,8 +42,6 @@ class AuthenticationBloc
     AuthenticationSignedUp event,
     Emitter<AuthenticationState> emit,
   ) async {
-    emit(AuthenticationLoading());
-
     final Either<Failure, User> response = await _signUp.call(
       params: UserSignUpParams(
         email: event.email,
@@ -60,8 +59,6 @@ class AuthenticationBloc
     AuthenticationSignedIn event,
     Emitter<AuthenticationState> emit,
   ) async {
-    emit(AuthenticationLoading());
-
     final Either<Failure, User> response = await _signIn.call(
       params: UserSignInParams(
         email: event.email,

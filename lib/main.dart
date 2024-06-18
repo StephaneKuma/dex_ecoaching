@@ -57,7 +57,6 @@ class MyApp extends StatelessWidget {
       builder: (context, child) =>
           BlocSelector<AppUserCubit, AppUserState, bool>(
         selector: (state) {
-          print(state);
           return state is AppUserLoggedIn;
         },
         builder: (context, state) {
@@ -67,7 +66,6 @@ class MyApp extends StatelessWidget {
             //     child: Text('Logged In'),
             //   ),
             // );
-            print("Logged in");
             _router.push(const SetupAccountRoute());
           }
           return MaterialApp.router(

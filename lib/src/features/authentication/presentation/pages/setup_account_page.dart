@@ -1,13 +1,16 @@
+import 'dart:io';
+
 import 'package:auto_route/auto_route.dart';
-import 'package:e_coaching/src/core/constants/colors.dart';
-import 'package:e_coaching/src/core/constants/dimensions.dart';
-import 'package:e_coaching/src/core/widgets/button.dart';
-import 'package:e_coaching/src/core/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:line_icons/line_icon.dart';
+
+import 'package:e_coaching/src/core/constants/dimensions.dart';
+import 'package:e_coaching/src/core/widgets/button.dart';
+import 'package:e_coaching/src/core/widgets/custom_text_form_field.dart';
 
 @RoutePage()
 class SetupAccountPage extends StatefulWidget {
@@ -19,6 +22,16 @@ class SetupAccountPage extends StatefulWidget {
 
 class _SetupAccountPageState extends State<SetupAccountPage> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final ImagePicker picker = ImagePicker();
+  XFile? image;
+
+  void pickImage({required ImageSource source}) async {
+    image = await picker.pickImage(source: source);
+    setState(() {});
+    if (mounted) {
+      context.router.maybePop();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,16 +49,21 @@ class _SetupAccountPageState extends State<SetupAccountPage> {
                 children: <Widget>[
                   Stack(
                     children: <Widget>[
-                      Container(
-                        height: 200.h,
-                        width: 200.h,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100.r),
-                          image: const DecorationImage(
-                            image: AssetImage('assets/images/user.png'),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(100.r),
+                        child: image == null
+                            ? Image.asset(
+                                'assets/images/user.png',
+                                height: 200.h,
+                                width: 200.h,
+                                fit: BoxFit.cover,
+                              )
+                            : Image.file(
+                                File(image!.path),
+                                height: 200.h,
+                                width: 200.h,
+                                fit: BoxFit.cover,
+                              ),
                       ),
                       Positioned(
                         bottom: 12.h,
@@ -107,12 +125,8 @@ class _SetupAccountPageState extends State<SetupAccountPage> {
                   ),
                   SizedBox(height: kDefaultSizedBoxHeight.h),
                   InternationalPhoneNumberInput(
-                    onInputChanged: (PhoneNumber number) {
-                      print(number.phoneNumber);
-                    },
-                    onInputValidated: (bool value) {
-                      print(value);
-                    },
+                    onInputChanged: (PhoneNumber number) {},
+                    onInputValidated: (bool value) {},
                     selectorConfig: const SelectorConfig(
                       selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
                     ),
@@ -191,7 +205,7 @@ class _SetupAccountPageState extends State<SetupAccountPage> {
               SizedBox(
                 height: 10.h,
               ),
-              const Text("Choose a profile photo"),
+              Text(AppLocalizations.of(context)!.chooseProfilePicture),
               SizedBox(
                 height: kDefaultSizedBoxHeight.h,
               ),
@@ -200,29 +214,39 @@ class _SetupAccountPageState extends State<SetupAccountPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        LineIcon.camera(
-                          size: 50.h,
-                        ),
-                        SizedBox(
-                          width: 10.w,
-                        ),
-                        const Text("Camera")
-                      ],
+                    GestureDetector(
+                      onTap: () {
+                        pickImage(source: ImageSource.camera);
+                      },
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          LineIcon.camera(
+                            size: 50.h,
+                          ),
+                          SizedBox(
+                            width: 10.w,
+                          ),
+                          Text(AppLocalizations.of(context)!.camera),
+                        ],
+                      ),
                     ),
-                    Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        LineIcon.image(
-                          size: 50.h,
-                        ),
-                        SizedBox(
-                          width: 10.w,
-                        ),
-                        const Text("Gallery")
-                      ],
+                    GestureDetector(
+                      onTap: () {
+                        pickImage(source: ImageSource.gallery);
+                      },
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          LineIcon.image(
+                            size: 50.h,
+                          ),
+                          SizedBox(
+                            width: 10.w,
+                          ),
+                          Text(AppLocalizations.of(context)!.gallery),
+                        ],
+                      ),
                     ),
                   ],
                 ),

@@ -182,5 +182,17 @@
     "female": "Femme",
     "@female": {
         "description": "The text of the 'Female' radio button"
+    },
+    "chooseProfilePicture": "Choisir une photo de profil",
+    "@chooseProfilePicture": {
+        "description": "The text of the 'Choose Profile Picture' button"
+    },
+    "camera": "Camera",
+    "@camera": {
+        "description": "The text of the 'Camera' button"
+    },
+    "gallery": "Galerie",
+    "@gallery": {
+        "description": "The text of the 'Gallery' button"
     }
 }
