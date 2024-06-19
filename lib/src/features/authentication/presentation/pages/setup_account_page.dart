@@ -45,7 +45,7 @@ class _SetupAccountPageState extends State<SetupAccountPage> {
           child: Form(
             key: formKey,
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
               child: Column(
                 children: <Widget>[
                   Stack(

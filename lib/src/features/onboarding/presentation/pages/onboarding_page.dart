@@ -92,7 +92,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 flex: 1,
                 child: Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: 16.0.w,
+                    horizontal: 20.0.w,
                     vertical: 20.h,
                   ),
                   child: Column(
