@@ -104,8 +104,15 @@ class _UserCoursesPageState extends State<UserCoursesPage> {
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: 10,
                 separatorBuilder: (context, index) => SizedBox(height: 20.h),
-                itemBuilder: (context, index) =>
-                    current == 1 ? CourseBox.inRaw() : CourseBox.completed(),
+                itemBuilder: (context, index) => current == 1
+                    ? CourseBox.completed(
+                        inProgress: true,
+                        completed: false,
+                      )
+                    : CourseBox.completed(
+                        inProgress: false,
+                        completed: true,
+                      ),
               )
             ],
           ),

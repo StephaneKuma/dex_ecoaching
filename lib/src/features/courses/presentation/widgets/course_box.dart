@@ -1,13 +1,16 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:e_coaching/src/core/constants/colors.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CourseBox extends StatelessWidget {
   const CourseBox({
     super.key,
     this.inRow = false,
+    this.inProgress = false,
     this.completed = false,
   });
 
@@ -15,12 +18,19 @@ class CourseBox extends StatelessWidget {
         inRow: true,
       );
 
-  factory CourseBox.completed() => const CourseBox(
-        inRow: true,
-        completed: true,
-      );
+  factory CourseBox.completed({
+    required bool inProgress,
+    required bool completed,
+  }) {
+    return CourseBox(
+      inRow: true,
+      inProgress: inProgress,
+      completed: completed,
+    );
+  }
 
   final bool inRow;
+  final bool inProgress;
   final bool completed;
 
   @override
@@ -86,19 +96,30 @@ class CourseBox extends StatelessWidget {
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                Container(
-                                  height: 50.h,
-                                  width: 50.h,
-                                  decoration: const BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Colors.white,
+                                if (completed && !inProgress)
+                                  Container(
+                                    height: 50.h,
+                                    width: 50.h,
+                                    decoration: const BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Colors.white,
+                                    ),
+                                    child: Icon(
+                                      Icons.check_circle,
+                                      color: kTertiaryColor,
+                                      size: 45.sp,
+                                    ),
                                   ),
-                                  child: Icon(
-                                    Icons.check_circle,
+                                if (!completed && inProgress)
+                                  const FaIcon(
+                                    FontAwesomeIcons.spinner,
                                     color: kTertiaryColor,
-                                    size: 45.sp,
-                                  ),
-                                )
+                                  )
+                                else if (!completed && !inProgress)
+                                  const Icon(
+                                    Icons.bookmark,
+                                    color: kTertiaryColor,
+                                  )
                               ],
                             ),
                             Text(
@@ -108,7 +129,7 @@ class CourseBox extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            if (!completed)
+                            if (!completed && !inProgress)
                               RichText(
                                 text: TextSpan(
                                   text: "28 \$  ",
@@ -156,7 +177,7 @@ class CourseBox extends StatelessWidget {
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                if (!completed)
+                                if (!completed && !inProgress)
                                   Text(
                                     "28 mentors",
                                     style: TextStyle(
@@ -165,7 +186,7 @@ class CourseBox extends StatelessWidget {
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                if (completed)
+                                if (completed || inProgress)
                                   const Text(
                                     "2 h 36 mins",
                                     style: TextStyle(
@@ -194,6 +215,51 @@ class CourseBox extends StatelessWidget {
                                   ),
                                 ),
                               ),
+                            if (inProgress)
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Expanded(
+                                    child: Container(
+                                      height: 10,
+                                      decoration: BoxDecoration(
+                                        color: Colors.lightBlue.shade50,
+                                        borderRadius: BorderRadius.circular(
+                                          12.r,
+                                        ),
+                                      ),
+                                      child: Row(
+                                        children: <Widget>[
+                                          Expanded(
+                                            flex: 9,
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                color: kTertiaryColor,
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                  12.r,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          const Spacer(
+                                            flex: 1,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(width: 10.w),
+                                  const Text(
+                                    "93/100",
+                                    style: TextStyle(
+                                      color: kTitleColor,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  )
+                                ],
+                              )
                           ],
                         ),
                       ),
